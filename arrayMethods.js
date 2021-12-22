@@ -123,6 +123,11 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 */
 
 // CODE HERE
+const totals = orders.map(function(element){
+  return element.price * (element.tax + 1);
+})
+
+console.log(totals);
 
 
 
