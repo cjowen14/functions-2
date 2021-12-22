@@ -87,19 +87,26 @@ function last(arr, callback){
 */
 
 // CODE HERE 
-
+function contains(arr, name, callback){
+  arr.forEach(function(element, index){
+    if(element === name){
+      callback(true);
+    } 
+  })
+}
+  
 
 // UNCOMMENT THE FUNCTION CALL BELOW
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
-// contains(names, 'Colt', result => {
-//   if(result === true){
-//     console.log('Colt is in the array')
-//   } else {
-//     console.log('Colt is not in the array')
-//   }
-// })
+ contains(names, 'Colt', result => {
+   if(result === true){
+     console.log('Colt is in the array')
+   } else {
+     console.log('Colt is not in the array')
+   }
+ })
 
 
 
@@ -112,6 +119,25 @@ function last(arr, callback){
 */
 
 // CODE HERE
+function uniq(array, callback){
+  for (let i = 0; i < array.length; i++){
+    for (let j = (i + 1); j < array.length; j++){
+      if(array[j] === array[i]){
+        let extraInfo = array.splice(j,1);
+      }
+    }
+  } callback(array);
+}
+
+function callback (uniqArr){
+  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
+}
+uniq(names, callback)
+  
+
+  
+
+
 
 /*
   Invoke the uniq function, passing in the names array from above and a callback function.
