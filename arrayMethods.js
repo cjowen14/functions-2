@@ -148,3 +148,8 @@ const purchases = [{"owner":"Barry","price":103},{"owner":"Bob","price":75},
 */
 
 // CODE HERE
+
+
+const bobsTotal = purchases.filter(element => element.owner === "Bob").map(element => element.price).reduce((accum, curr) => accum + curr);
+
+console.log(bobsTotal);
