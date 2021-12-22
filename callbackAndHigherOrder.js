@@ -15,6 +15,12 @@ function multiply (num1, num2, callback) {
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
+function answer (answer){
+  console.log('The answer is ' + answer);
+}
+
+multiply(4,3,answer); //last 5 lines were doing the function call with function declaration because that helped it make more sense to me.
+
  multiply(4, 3, answer => {
    console.log('The answer is ' + answer) //should console.log 12
  })
@@ -88,11 +94,11 @@ function last(arr, callback){
 
 // CODE HERE 
 function contains(arr, name, callback){
-  arr.forEach(function(element, index){
-    if(element === name){
+  if (arr.includes(name) === true){
       callback(true);
-    } 
-  })
+    } else {
+      callback(false);
+    }
 }
   
 
@@ -100,7 +106,7 @@ function contains(arr, name, callback){
 // RUN THIS FILE WITH NODE
 // CHECK YOUR ANSWER
 
- contains(names, 'Colt', result => {
+ contains(names, 'Brandon', result => {
    if(result === true){
      console.log('Colt is in the array')
    } else {
@@ -129,14 +135,6 @@ function uniq(array, callback){
   } callback(array);
 }
 
-function callback (uniqArr){
-  console.log(`The new names array with all the duplicate items removed is ${uniqArr}`);
-}
-uniq(names, callback)
-  
-
-  
-
 
 
 /*
@@ -147,7 +145,15 @@ uniq(names, callback)
 */
 
 // CODE HERE
+function callback (uniqArr){
+  console.log(`The new names array witha ll the duplicate items removed is ${uniqArr}`);
+}
+uniq(names, callback)
 
+
+uniq(names, uniqArr => {
+  console.log(`The new names array witha ll the duplicate items removed is ${uniqArr}`); //again trying both ways to get a better grasp on it
+})
 
 
 ////////// PROBLEM 6 //////////
